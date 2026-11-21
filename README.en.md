@@ -5,7 +5,7 @@
 [![License: Source-Available](https://img.shields.io/badge/license-source--available-orange.svg)](LICENSE)
 [![No Derivatives](https://img.shields.io/badge/derivatives-not%20permitted-c03636.svg)](LICENSE)
 
-**Source-available, not open source.** You may clone, build and self-host it for personal use. You may not modify, redistribute, or use it commercially. See [LICENSE](LICENSE) and [docs/LICENSING.md](docs/LICENSING.md).
+**Source-available, not open source.** You may clone, build and self-host it — including as a publicly accessible site — for non-commercial personal use. You may not modify it, redistribute the code, or use it commercially. See [LICENSE](LICENSE) and [docs/LICENSING.md](docs/LICENSING.md).
 [![React 19](https://img.shields.io/badge/react-19-0b7285.svg)](https://react.dev)
 
 Identity keywords are first-class neurons; skills, steps, progress and todos are their synapses. Most of the time you only see the first level — a branch reveals itself only when your pointer **comes near** it.
@@ -74,6 +74,8 @@ The frontend picks its backend in `src/cloud.ts`; all business logic lives in `s
 
 [Second Mind Source-Available License v1.0](LICENSE) — **this is not an open source license**.
 
-Permitted: viewing and cloning, building, running on your own machines or servers, and private deployments for you and your household. Prohibited: modification, derivative works, redistribution in any form, and any commercial use, including offering it as a hosted or paid service. Commercial or derivative licensing is available from the author on request.
+Permitted: viewing and cloning, building, running on your own machines or servers, and non-commercial personal deployments — **including a deployment that is publicly accessible over the internet**. Prohibited: modification, derivative works, redistribution of the source or compiled output, and any commercial use, including charging for access or operating it as a hosted service. A public deployment must be run by you as an individual, must not be offered as a product or service, and must keep the copyright notice. Serving compiled assets to visitors' browsers is not redistribution; visitors gain no rights to the code. Commercial or derivative licensing is available from the author on request.
+
+See [docs/LICENSING.md](docs/LICENSING.md) for the boundary cases (ads, donations, internal company use, and so on).
 
 Third-party dependencies (React, d3-force, zustand, and others) remain under their own licenses, mostly MIT. This license does not alter their terms.

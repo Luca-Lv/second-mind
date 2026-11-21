@@ -143,7 +143,7 @@ To https://github.com/<你的账号>/second-mind.git
 branch 'main' set up to track 'origin/main'.
 ```
 
-刷新 `https://github.com/<你的账号>/second-mind`，应该能看到 46 个文件、README 正常渲染、右侧显示 `View license`（自定义许可不会显示成 MIT / Apache 那种标准名称，这是正常的）。
+刷新 `https://github.com/<你的账号>/second-mind`，应该能看到 48 个文件、README 正常渲染、右侧显示 `View license`（自定义许可不会显示成 MIT / Apache 那种标准名称，这是正常的）。
 
 > `-u` 的意思是记住"本地 main 对应远端 origin/main"，之后直接 `git push` 就行，不用再写参数。
 

@@ -130,7 +130,7 @@ export function SettingsDialog() {
           </>
         )}
         <div style={{ marginTop: 10, color: 'var(--text-3)' }}>
-          © 2026 Lv Ke · second mind · 源码可见，禁止改编与再分发
+          © 2026 Lv Ke · second mind · 源码可见 · 禁止改编与再分发 · 允许非商业自建部署
         </div>
       </div>
     </Dialog>

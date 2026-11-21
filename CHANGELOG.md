@@ -21,8 +21,9 @@
 
 ### 许可
 
-- 许可证为 **Second Mind Source-Available License v1.0**（非开源）：允许查看、克隆、构建与自用部署；禁止改编、再分发与商用。详见 [LICENSE](LICENSE) 与 [docs/LICENSING.md](docs/LICENSING.md)。
+- 许可证为 **Second Mind Source-Available License v1.0**（非开源）：允许查看、克隆、构建与非商业的自用部署（**含部署成公开可访问的站点**）；禁止改编、再分发与商用。详见 [LICENSE](LICENSE) 与 [docs/LICENSING.md](docs/LICENSING.md)。
 - 起草阶段曾使用 MIT，发布前已撤换；仓库未公开推送过，因此不存在已按 MIT 授权的第三方副本。
+- 同一版本内做过一次放宽：从「仅本人与家庭的私人部署、不对外提供服务」放开到「非商业自用的公开部署」，并为此刻意写清「部署不构成再分发」（第 2(f) 条）。
 
 ### 已知限制
 

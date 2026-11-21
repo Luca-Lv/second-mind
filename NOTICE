@@ -9,11 +9,14 @@ the Second Mind Source-Available License v1.0; see the LICENSE file.
 
 Summary of what the license allows and forbids (the LICENSE text governs):
 
-  ALLOWED    view, clone, build, run, and privately deploy for your own and your
-             household's personal use; propose changes back to this repository.
+  ALLOWED    view, clone, build, run, and deploy for your own personal,
+             non-commercial use — including a deployment that is publicly
+             accessible over the internet, provided you run it yourself, do not
+             charge for it, do not offer it as a product or service, and keep
+             this notice; propose changes back to this repository.
   FORBIDDEN  modifying the software (except to submit a contribution), creating
-             derivative works, redistributing it in any form, using it
-             commercially, or presenting it as the basis of another product.
+             derivative works, redistributing the source or compiled output, using
+             it commercially, or presenting it as the basis of another product.
 
 If you received this software from somewhere other than this repository, that
 copy may be unauthorized. Please report it to the copyright holder.

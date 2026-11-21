@@ -22,8 +22,9 @@ above.
 "You" means the individual or legal entity exercising rights under this license.
 
 "Personal Use" means use by You, or by members of Your household, for purposes
-that are private and non-commercial, and that do not generate revenue, do not
-support a business activity, and are not offered to the public.
+that are non-commercial, that do not generate revenue, and that do not support a
+business activity. Personal Use may include a deployment that is publicly
+accessible over a network, on the conditions set out in Section 2(c).
 
 "Commercial" means any use that is intended for or directed toward commercial
 advantage or monetary compensation, including internal use by a for-profit
@@ -34,7 +35,8 @@ or otherwise create a derivative work of the Software, in whole or in part.
 
 "Distribute" means to publish, upload, post, transmit, sublicense, sell, rent,
 lease, lend, share, or otherwise make the Software or any part of it available
-to any third party, in source or compiled form, with or without charge.
+to any third party, in source or compiled form, with or without charge. Merely
+operating a deployment permitted by Section 2(c) is not Distribution.
 
 --------------------------------------------------------------------------------
 2. GRANT OF RIGHTS
@@ -49,16 +51,34 @@ royalty-free license to:
   (b) build the Software using its documented build process;
 
   (c) run and deploy the Software for Personal Use, including on servers or
-      hosting that You control or rent, provided the resulting deployment is
-      used only by You or Your household and is not made available to the
-      public as a service;
+      hosting that You control or rent, and including a deployment that is
+      publicly accessible over a network, provided that all of the following
+      conditions are met:
+        (i) the deployment is operated by You as an individual (or by Your
+            household) and serves Your own purposes;
+        (ii) the deployment is not itself the thing being offered: it is not
+             sold, marketed, or presented as a product, and You do not offer it
+             to third parties as a hosted, managed, or supported service;
+        (iii) it does not generate revenue, and no fee is charged for access,
+              membership, or any feature of it; and
+        (iv) it displays, and does not remove or obscure, the copyright and
+             license notices required by Section 3(e);
 
   (d) make a reasonable number of copies strictly necessary for the activities
       in (b) and (c), and for backup purposes;
 
   (e) modify the Software solely for the purpose of preparing and submitting a
       contribution back to this repository under Section 5, and for no other
-      purpose.
+      purpose;
+
+  (f) for the avoidance of doubt, operating a deployment permitted by
+      Section 2(c) does not constitute use of the Software "as a service" under
+      Section 3(c), and the transmission of compiled assets to a visitor's
+      browser in the ordinary course of such a deployment does not constitute
+      Distribution under Section 3(b). Being reachable by the general public does
+      not, by itself, make a deployment a service offered to third parties.
+      Visitors to such a deployment receive no right to the Software beyond
+      viewing that deployment as it runs.
 
 --------------------------------------------------------------------------------
 3. RESTRICTIONS
@@ -70,12 +90,14 @@ You must not, and must not permit or assist any third party to:
 
   (b) Distribute the Software or any part of it, in source or compiled form,
       including publishing it to any code host, package registry, marketplace,
-      or website, or including it in any product, application, or archive;
+      or website, or including it in any product, application, or archive,
+      except as incident to a deployment permitted by Section 2(c);
 
   (c) use the Software, in whole or in part, as a basis for, or as a component
       of, any other product, service, template, boilerplate, starter kit,
       course, or published work, or to develop, train, or improve any such
-      thing;
+      thing, provided that operating Your own deployment under Section 2(c) is
+      not such a use;
 
   (d) use the Software for any Commercial purpose, including offering it or any
       deployment of it as a hosted, managed, or paid service;
@@ -194,17 +216,20 @@ only; in the event of any conflict or inconsistency, the English text prevails.
 允许：
   · 查看、克隆本仓库
   · 按文档构建，在自己的机器或自有服务器上运行
-  · 仅你本人与家庭成员使用的私人部署（不对外提供服务）
+  · 非商业的个人自用部署，包括部署成公开可访问的网站（访客可打开使用，但你不得
+    收费、不得作为产品或托管服务运营、不得对外宣称提供该服务、不得移除版权声明）
   · 为构建、运行、备份所需的必要复制
+  · 部署时向访客浏览器传输编译产物（这不算再分发）
   · 为向本仓库提交 PR 而做的修改
 
 禁止：
   · 改编、改写、翻译、拆解、扩展本代码，或制作衍生作品
   · 再分发：上传到任何代码托管 / 包管理器 / 网站，或打包进任何产品、模板、脚手架、课程
-  · 商用：包括作为付费或托管服务对外提供
+  · 商用：包括作为付费或托管服务对外提供，或就访问、会员、功能收费
   · 拿本代码作为自己产品的基础或组成部分
   · 删除或修改版权声明与许可文本
   · 使用 "second mind" 名称或作者名义暗示关联、背书
+  · 访客从你的部署中获得任何代码层面的权利（他们只能使用运行中的站点）
 
 注意：
   · 这不是开源许可，不授予任何商标权、专利权
