@@ -2,7 +2,10 @@
 
 > A neuronal map of who you are.
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-black.svg)](LICENSE)
+[![License: Source-Available](https://img.shields.io/badge/license-source--available-orange.svg)](LICENSE)
+[![No Derivatives](https://img.shields.io/badge/derivatives-not%20permitted-c03636.svg)](LICENSE)
+
+**Source-available, not open source.** You may clone, build and self-host it for personal use. You may not modify, redistribute, or use it commercially. See [LICENSE](LICENSE) and [docs/LICENSING.md](docs/LICENSING.md).
 [![React 19](https://img.shields.io/badge/react-19-0b7285.svg)](https://react.dev)
 
 Identity keywords are first-class neurons; skills, steps, progress and todos are their synapses. Most of the time you only see the first level — a branch reveals itself only when your pointer **comes near** it.
@@ -48,7 +51,7 @@ npm run build
 
 Then apply [`docs/schema.sql`](docs/schema.sql) to your PostgreSQL/PostgREST-compatible backend — four tables, a global `rev` sequence with triggers, RLS policies, and two device RPCs.
 
-The frontend picks its backend in `src/cloud.ts`; all business logic lives in `src/data.ts`. To target your own API, implement the small chainable surface demonstrated in `src/backend/local.ts`.
+The frontend picks its backend in `src/cloud.ts`; all business logic lives in `src/data.ts`. Any PostgREST-compatible backend works through environment variables alone. A non-compatible API would require changing code, which counts as modification under the LICENSE and needs prior permission.
 
 ## Honest limits
 
@@ -69,4 +72,8 @@ The frontend picks its backend in `src/cloud.ts`; all business logic lives in `s
 
 ## License
 
-[MIT](LICENSE)
+[Second Mind Source-Available License v1.0](LICENSE) — **this is not an open source license**.
+
+Permitted: viewing and cloning, building, running on your own machines or servers, and private deployments for you and your household. Prohibited: modification, derivative works, redistribution in any form, and any commercial use, including offering it as a hosted or paid service. Commercial or derivative licensing is available from the author on request.
+
+Third-party dependencies (React, d3-force, zustand, and others) remain under their own licenses, mostly MIT. This license does not alter their terms.

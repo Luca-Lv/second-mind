@@ -3,7 +3,7 @@
 > 一句话：**一个用神经元网络来梳理"我是谁"的第二大脑。**
 > 身份词是第一级神经元，技能 / 步骤 / 待办是它伸出的突触；你只在自己靠近时，才看见突触上的细节。
 
-**产品形态**：Web（移动优先，PWA 可安装）· **开源协议**：MIT · **核心视图**：Network（全局网络）/ Board（身份工作台）
+**产品形态**：Web（移动优先，PWA 可安装）· **授权**：源码可见、禁止改编（原设计为 MIT，发布前已撤换，见 [LICENSING.md](LICENSING.md)）· **核心视图**：Network（全局网络）/ Board（身份工作台）
 
 ---
 
@@ -358,7 +358,7 @@ second-mind/
 └─ .env.example
 ```
 
-**开源要素**：MIT · README（GIF 演示优先于文字）· CONTRIBUTING · CODE_OF_CONDUCT · SECURITY.md · `pnpm seed:demo` 生成示例图谱 · 无遥测
+**工程要素**：严格许可（非开源，见 LICENSE）· README · CONTRIBUTING · CODE_OF_CONDUCT · SECURITY.md · 示例图谱 · 无遥测
 
 ---
 

@@ -2,10 +2,12 @@
 
 > 用一张神经元网络，梳理「我是谁」。
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-black.svg)](LICENSE)
+[![License: Source-Available](https://img.shields.io/badge/license-source--available-orange.svg)](LICENSE)
+[![No Derivatives](https://img.shields.io/badge/derivatives-not%20permitted-c03636.svg)](LICENSE)
 [![React 19](https://img.shields.io/badge/react-19-0b7285.svg)](https://react.dev)
 [![Vite 6](https://img.shields.io/badge/vite-6-646cff.svg)](https://vite.dev)
-[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
+**源码可见（source-available），不是开源许可。** 可以克隆、构建、自用部署；不可改编、不可再分发、不可商用。详见 [LICENSE](LICENSE) 与 [docs/LICENSING.md](docs/LICENSING.md)。
 
 身份词是第一级神经元，技能、步骤、进度、待办是它伸出的突触。平时你只看见第一级；只有当指针**靠近**某个小点，那一簇才亮起名字。
 
@@ -41,9 +43,9 @@ npm run dev        # http://localhost:5173
 | 数据存放 | 浏览器 `localStorage` | 云数据库（PostgreSQL + 行级隔离） |
 | 登录 | 无，一键进入 | 手机号 + 短信验证码，同一号码最多 3 台设备，15 天免登录 |
 | 多设备同步 | 无 | 约 1–2 秒内合并 |
-| 适用 | 试用、fork 二次开发、离线演示 | 真实自用、多设备 |
+| 适用 | 试用、离线演示、自用部署 | 真实自用、多设备 |
 
-> 本地模式换浏览器或清站点数据即丢失，这是有意的取舍：让 fork 的人零门槛先看到产品，再决定要不要接后端。
+> 本地模式换浏览器或清站点数据即丢失，这是有意的取舍：让人零门槛先看到产品，再决定要不要接自己的云环境。
 
 ## 三个视图，一份数据
 
@@ -88,7 +90,9 @@ npm run build
 3. 把 endpoint 与 publishableKey 写入 `.env.local`
 4. `npm run build`
 
-前端只通过 `src/cloud.ts` 选后端，业务逻辑全在 `src/data.ts`。换成自建 API 时只需要实现同一小撮链式方法（见 `src/backend/local.ts` 的实现，约 300 行）。
+前端只通过 `src/cloud.ts` 选后端，业务逻辑全在 `src/data.ts`。对接任何 **PostgREST 兼容**的环境都不需要改代码，只改环境变量。
+
+> 如果你的后端不是 PostgREST 兼容（例如要接自建 REST / GraphQL），那需要改动 `src/data.ts` 或新增适配层——这属于 LICENSE 意义上的「改编」，需事先获得作者授权。本 README 描述代码结构，不构成改编许可。
 
 > `publishableKey` 只标识「哪个应用」，本身不带权限；服务端按 Origin 精确校验，可以出现在前端产物里。真正的隔离靠数据库 RLS，不靠这把钥匙。
 
@@ -130,7 +134,7 @@ devices     (id, owner_id, device_key, label, platform, created_at, last_seen_at
 - 同一浏览器的多个标签页通过 `BroadcastChannel` 立刻互相同步
 - 跨设备每 1.5 秒拉一次 `rev > cursor` 的增量，切回页面时立刻拉一次
 
-所以跨设备延迟约 **1–2 秒**，不是零。要真推送，需要把数据层换成支持订阅的后端（Supabase Realtime / Hocuspocus），`src/data.ts` 是唯一要改的文件。
+所以跨设备延迟约 **1–2 秒**，不是零。要真推送，得把数据层换成支持订阅的后端（Supabase Realtime / Hocuspocus）——那属于改编，需授权；`src/data.ts` 是唯一涉及的文件。
 
 ## 关于「绑定设备」的边界
 
@@ -172,4 +176,15 @@ Web 端绑不了硬件。所谓 15 天免登录，本质是一枚 15 天有效�
 
 ## License
 
-[MIT](LICENSE)
+[Second Mind Source-Available License v1.0](LICENSE) —— **这不是开源许可**。
+
+| 可以 | 不可以 |
+|---|---|
+| 查看、克隆源码 | 改编、改写、拆解、制作衍生作品 |
+| 按文档构建，在自有设备或服务器上运行 | 再分发（上传到其它代码托管、包管理器，或打包进任何产品/模板/课程） |
+| 仅供本人与家庭成员使用的私人部署 | 商用，包括作为托管或付费服务对外提供 |
+| 为提交 PR 而修改并回传 | 拿本代码作为自己产品的基础或组成部分 |
+
+需要商用授权、或希望基于本项目做二次开发，请通过仓库 Issue 联系作者单独授权。第三方依赖（React、d3-force、zustand 等）仍按其自身许可（多为 MIT），本许可不改变它们的条款。
+
+> 说明：本许可限制的是**版权**层面的复制与改编，不构成对已公开的第三方依赖的再许可，也不授予商标权。法律问题请以 [LICENSE](LICENSE) 英文正文为准。

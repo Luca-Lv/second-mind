@@ -92,6 +92,8 @@ startSync() {
 
 ## 扩展点
 
+> 以下都是**改代码**。本仓库采用严格许可（非开源），改编需事先获得作者授权。本节描述结构，不构成改编许可。
+
 - **换后端**：实现 `src/backend/local.ts` 里那套链式方法（`from/select/insert/update/eq/in/is/gt/order/range/limit`）即可；`data.ts` 不动。
 - **加节点类型**：`types.ts` 的 `Kind` + `KIND_LABEL`，再在工作台的加号菜单里注册。
 - **加视图**：`store.ts` 的 `View` 联合类型 + `App.tsx` 一处分支。视图只读 store、只调 `data.ts`。

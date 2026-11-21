@@ -4,7 +4,7 @@
 
 ## [0.1.0] — 2026-11-22
 
-首个可开源发布的版本。
+首个发布版本。
 
 ### 新增
 
@@ -18,6 +18,11 @@
 - **双主题**：浅色/深色，跟随系统可手动锁定，对比度按 WCAG 2.2 AA 核算。
 - **软删除**：删除写 `deleted_at`，因此可跨设备同步且可撤销。
 - 本地后端烟雾测试（`npm test`）与 GitHub Actions CI。
+
+### 许可
+
+- 许可证为 **Second Mind Source-Available License v1.0**（非开源）：允许查看、克隆、构建与自用部署；禁止改编、再分发与商用。详见 [LICENSE](LICENSE) 与 [docs/LICENSING.md](docs/LICENSING.md)。
+- 起草阶段曾使用 MIT，发布前已撤换；仓库未公开推送过，因此不存在已按 MIT 授权的第三方副本。
 
 ### 已知限制
 

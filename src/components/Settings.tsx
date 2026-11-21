@@ -129,6 +129,9 @@ export function SettingsDialog() {
             实时的意思：本机改动立即生效，其它设备约 1–2 秒内合并。没网时改动会留在本地，联网后自动补上。
           </>
         )}
+        <div style={{ marginTop: 10, color: 'var(--text-3)' }}>
+          © 2026 Lv Ke · second mind · 源码可见，禁止改编与再分发
+        </div>
       </div>
     </Dialog>
   )

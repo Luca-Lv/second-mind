@@ -1,0 +1,34 @@
+NOTICE
+======
+
+second mind
+Copyright (c) 2026 Lv Ke. All rights reserved.
+
+This repository is **source-available**, not open source. It is licensed under
+the Second Mind Source-Available License v1.0; see the LICENSE file.
+
+Summary of what the license allows and forbids (the LICENSE text governs):
+
+  ALLOWED    view, clone, build, run, and privately deploy for your own and your
+             household's personal use; propose changes back to this repository.
+  FORBIDDEN  modifying the software (except to submit a contribution), creating
+             derivative works, redistributing it in any form, using it
+             commercially, or presenting it as the basis of another product.
+
+If you received this software from somewhere other than this repository, that
+copy may be unauthorized. Please report it to the copyright holder.
+
+Third-party components
+----------------------
+
+This repository depends on third-party packages distributed under their own
+licenses, including (non-exhaustive):
+
+  react, react-dom        MIT
+  d3-force                ISC
+  zustand                 MIT
+  vite, @vitejs/plugin-react, typescript, esbuild, terser  MIT / Apache-2.0
+
+Those licenses continue to apply to those components. The license of this
+repository does not restrict, extend, or relicense them. Full texts are available
+in each package's directory under node_modules/ after installation.

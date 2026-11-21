@@ -2,7 +2,7 @@
   "name": "second-mind",
   "version": "0.1.0",
   "description": "A neuronal second brain: identity keywords as first-class neurons, with proximity-revealed branches.",
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
   "type": "module",
   "keywords": [
     "second-brain",

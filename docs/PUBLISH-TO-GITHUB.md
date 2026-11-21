@@ -29,7 +29,7 @@
 2. 填写：
    - **Repository name**：`second-mind`
    - **Description**（可选）：`A neuronal second brain: identity keywords as first-class neurons.`
-   - 选 **Public**（开源就选公开；想先私藏可以选 Private，之后能改）
+   - 选 **Public**（想看的人多就公开；想先私藏选 Private，之后能改）。注意：公开仓库允许他人查看与 Fork，这是 GitHub 平台层面的规则，许可证只能约束 Fork 之后的**使用**，挡不住 Fork 这个动作。详见 [LICENSING.md](LICENSING.md)。
 3. **下面三个勾全部不要勾**：
    - ☐ Add a README file
    - ☐ Add .gitignore
@@ -143,7 +143,7 @@ To https://github.com/<你的账号>/second-mind.git
 branch 'main' set up to track 'origin/main'.
 ```
 
-刷新 `https://github.com/<你的账号>/second-mind`，应该能看到 44 个文件、README 正常渲染、右上角显示 MIT 许可证。
+刷新 `https://github.com/<你的账号>/second-mind`，应该能看到 46 个文件、README 正常渲染、右侧显示 `View license`（自定义许可不会显示成 MIT / Apache 那种标准名称，这是正常的）。
 
 > `-u` 的意思是记住"本地 main 对应远端 origin/main"，之后直接 `git push` 就行，不用再写参数。
 
@@ -163,7 +163,7 @@ bash scripts/publish.sh              # 真正执行：检查 → 设 remote → 
 1. **填 About**：仓库首页右上角齿轮 → Description 填一句话，Topics 加上
    `second-brain` `knowledge-graph` `react` `canvas` `pkm` `identity`
    （Topics 影响别人能不能搜到你）
-2. **确认许可证被识别**：仓库首页右侧应显示 `MIT license`。没有的话检查 `LICENSE` 是否在根目录。
+2. **确认许可证被识别**：仓库首页右侧应显示 `View license`（本项目是自定义的 source-available 许可，GitHub 不会给标准名称，显示 `Unknown license` 也正常）。没有的话检查 `LICENSE` 是否在根目录。
 3. **确认 Issues 开启**：Settings → General → Features → Issues 勾上。`.github/ISSUE_TEMPLATE/` 里的表单会自动生效。
 4. **看 CI 有没有跑**：点 **Actions** 标签页。第一次可能需要点 "I understand my workflows, go ahead and enable them"。绿灯说明 typecheck、测试、构建都过。
 5. **（可选）上线一个能点的版本**：

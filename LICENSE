@@ -1,21 +1,213 @@
-MIT License
+SECOND MIND SOURCE-AVAILABLE LICENSE
+Version 1.0 — 22 November 2026
 
-Copyright (c) 2026 second mind contributors
+Copyright (c) 2026 Lv Ke. All rights reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This is NOT an open source license. It is a source-available license that grants
+only the rights expressly stated below. All rights not expressly granted are
+reserved by the copyright holder. If you do not accept these terms, you have no
+right to use the Software.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+--------------------------------------------------------------------------------
+1. DEFINITIONS
+--------------------------------------------------------------------------------
+
+"Software" means the source code, documentation, configuration, styles, assets
+and any compiled or bundled output contained in or produced from this
+repository.
+
+"Copyright Holder" means the person or entity named in the copyright notice
+above.
+
+"You" means the individual or legal entity exercising rights under this license.
+
+"Personal Use" means use by You, or by members of Your household, for purposes
+that are private and non-commercial, and that do not generate revenue, do not
+support a business activity, and are not offered to the public.
+
+"Commercial" means any use that is intended for or directed toward commercial
+advantage or monetary compensation, including internal use by a for-profit
+entity in the course of its business.
+
+"Modify" means to change, adapt, translate, refactor, extend, subset, rearrange,
+or otherwise create a derivative work of the Software, in whole or in part.
+
+"Distribute" means to publish, upload, post, transmit, sublicense, sell, rent,
+lease, lend, share, or otherwise make the Software or any part of it available
+to any third party, in source or compiled form, with or without charge.
+
+--------------------------------------------------------------------------------
+2. GRANT OF RIGHTS
+--------------------------------------------------------------------------------
+
+Subject to Your full compliance with this license, the Copyright Holder grants
+You a limited, non-exclusive, non-transferable, non-sublicensable, revocable,
+royalty-free license to:
+
+  (a) view and clone the Software;
+
+  (b) build the Software using its documented build process;
+
+  (c) run and deploy the Software for Personal Use, including on servers or
+      hosting that You control or rent, provided the resulting deployment is
+      used only by You or Your household and is not made available to the
+      public as a service;
+
+  (d) make a reasonable number of copies strictly necessary for the activities
+      in (b) and (c), and for backup purposes;
+
+  (e) modify the Software solely for the purpose of preparing and submitting a
+      contribution back to this repository under Section 5, and for no other
+      purpose.
+
+--------------------------------------------------------------------------------
+3. RESTRICTIONS
+--------------------------------------------------------------------------------
+
+You must not, and must not permit or assist any third party to:
+
+  (a) Modify the Software, except as permitted by Section 2(e);
+
+  (b) Distribute the Software or any part of it, in source or compiled form,
+      including publishing it to any code host, package registry, marketplace,
+      or website, or including it in any product, application, or archive;
+
+  (c) use the Software, in whole or in part, as a basis for, or as a component
+      of, any other product, service, template, boilerplate, starter kit,
+      course, or published work, or to develop, train, or improve any such
+      thing;
+
+  (d) use the Software for any Commercial purpose, including offering it or any
+      deployment of it as a hosted, managed, or paid service;
+
+  (e) remove, obscure, or alter any copyright notice, license text, attribution,
+      or link to this license;
+
+  (f) use the name "second mind", the Copyright Holder's name, or any confusing
+      similar name, to endorse, promote, or imply affiliation with any product
+      or service;
+
+  (g) sublicense, assign, or transfer this license or any of the rights granted
+      under it;
+
+  (h) circumvent or attempt to circumvent any technical measure that limits use
+      of the Software.
+
+--------------------------------------------------------------------------------
+4. NO TRADEMARK OR PATENT LICENSE
+--------------------------------------------------------------------------------
+
+No trademark, service mark, trade name, or patent rights are granted under this
+license, whether by implication, estoppel, or otherwise.
+
+--------------------------------------------------------------------------------
+5. CONTRIBUTIONS
+--------------------------------------------------------------------------------
+
+If You submit a contribution (including any patch, pull request, or suggestion)
+to this repository, You:
+
+  (a) represent that You are the sole author of the contribution and have the
+      right to grant the rights in this Section;
+
+  (b) grant the Copyright Holder a perpetual, worldwide, irrevocable,
+      royalty-free, fully paid-up, sublicensable, and transferable license to
+      use, reproduce, modify, adapt, publish, distribute, and relicense Your
+      contribution, in any form and for any purpose, including under a
+      different license; and
+
+  (c) waive, to the extent permitted by applicable law, any moral rights in the
+      contribution that would prevent the Copyright Holder from exercising the
+      rights in (b).
+
+Submission of a contribution does not grant You any right to use the Software
+beyond what Section 2 allows.
+
+--------------------------------------------------------------------------------
+6. THIRD-PARTY COMPONENTS
+--------------------------------------------------------------------------------
+
+The Software includes or depends on third-party components that are licensed
+under their own terms (for example, dependencies listed in package.json). This
+license does not alter, restrict, or extend those terms. Your use of those
+components is governed by their respective licenses, and this license applies
+only to the original code of the Software to the extent the Copyright Holder
+holds rights in it.
+
+--------------------------------------------------------------------------------
+7. TERMINATION
+--------------------------------------------------------------------------------
+
+This license terminates automatically, without notice, if You breach any of its
+terms. On termination, You must immediately stop all use of the Software and
+delete all copies in Your possession or control. Sections 3, 5, 6, 8, 9, and 10
+survive termination.
+
+The Copyright Holder may also terminate this license at any time by written
+notice. Termination does not affect any rights of parties who obtained the
+Software in compliance with this license before termination.
+
+--------------------------------------------------------------------------------
+8. NO WARRANTY
+--------------------------------------------------------------------------------
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. THE COPYRIGHT HOLDER
+DOES NOT WARRANT THAT THE SOFTWARE WILL BE ERROR-FREE OR UNINTERRUPTED.
+
+--------------------------------------------------------------------------------
+9. LIMITATION OF LIABILITY
+--------------------------------------------------------------------------------
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE COPYRIGHT HOLDER SHALL
+NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE
+DAMAGES, OR FOR ANY LOSS OF PROFITS, DATA, OR GOODWILL, ARISING OUT OF OR
+RELATED TO THIS LICENSE OR THE SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGES. THE COPYRIGHT HOLDER'S TOTAL LIABILITY UNDER THIS LICENSE SHALL
+NOT EXCEED THE AMOUNT YOU PAID FOR THE SOFTWARE, IF ANY.
+
+--------------------------------------------------------------------------------
+10. GOVERNING LAW AND DISPUTES
+--------------------------------------------------------------------------------
+
+This license is governed by the laws of the People's Republic of China, without
+regard to its conflict-of-law rules. Any dispute arising out of or in connection
+with this license shall be submitted to the competent people's court at the
+place of domicile of the Copyright Holder.
+
+If any provision of this license is held unenforceable, that provision shall be
+limited or severed to the minimum extent necessary, and the remaining provisions
+shall remain in full force and effect.
+
+--------------------------------------------------------------------------------
+11. LANGUAGE
+--------------------------------------------------------------------------------
+
+This license is executed in English. Any translation is provided for convenience
+only; in the event of any conflict or inconsistency, the English text prevails.
+
+--------------------------------------------------------------------------------
+中文摘要（仅供理解，不具备法律效力，以英文正文为准）
+--------------------------------------------------------------------------------
+
+允许：
+  · 查看、克隆本仓库
+  · 按文档构建，在自己的机器或自有服务器上运行
+  · 仅你本人与家庭成员使用的私人部署（不对外提供服务）
+  · 为构建、运行、备份所需的必要复制
+  · 为向本仓库提交 PR 而做的修改
+
+禁止：
+  · 改编、改写、翻译、拆解、扩展本代码，或制作衍生作品
+  · 再分发：上传到任何代码托管 / 包管理器 / 网站，或打包进任何产品、模板、脚手架、课程
+  · 商用：包括作为付费或托管服务对外提供
+  · 拿本代码作为自己产品的基础或组成部分
+  · 删除或修改版权声明与许可文本
+  · 使用 "second mind" 名称或作者名义暗示关联、背书
+
+注意：
+  · 这不是开源许可，不授予任何商标权、专利权
+  · 违反任一条款，授权自动终止，须立即停止使用并删除全部副本
+  · 第三方依赖（React、d3-force、zustand 等）仍按其各自许可（多为 MIT）授权，
+    本许可不能限制这些依赖本身的使用
