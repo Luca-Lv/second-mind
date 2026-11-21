@@ -1,0 +1,44 @@
+{
+  "name": "second-mind",
+  "version": "0.1.0",
+  "description": "A neuronal second brain: identity keywords as first-class neurons, with proximity-revealed branches.",
+  "license": "MIT",
+  "type": "module",
+  "keywords": [
+    "second-brain",
+    "knowledge-graph",
+    "force-directed-graph",
+    "identity",
+    "react",
+    "canvas",
+    "personal-knowledge-management"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:web": "OUT_DIR=site vite build",
+    "preview": "vite preview --port 4173",
+    "typecheck": "tsc --noEmit",
+    "test": "esbuild tests/local-backend.test.ts --bundle --format=esm --platform=node --outfile=node_modules/.cache/sm-test.mjs --log-level=error && node node_modules/.cache/sm-test.mjs"
+  },
+  "dependencies": {
+    "@tencent-ai/workbuddy-cloud-sdk": "^0.1.4",
+    "d3-force": "^3.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zustand": "^5.0.2"
+  },
+  "devDependencies": {
+    "@types/d3-force": "^3.0.10",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "esbuild": "^0.25.12",
+    "terser": "^5.51.4",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5"
+  }
+}
