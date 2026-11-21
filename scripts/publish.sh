@@ -41,16 +41,25 @@ fi
 
 USER_NAME="${GH_USER:-}"
 if [ -z "$USER_NAME" ]; then
-  printf 'GitHub 用户名: '
-  read -r USER_NAME
+  if [ -t 0 ]; then
+    printf 'GitHub 用户名: '
+    read -r USER_NAME
+  else
+    die "非交互环境请显式传入用户名：GH_USER=<你的账号> bash scripts/publish.sh"
+  fi
 fi
 [ -n "$USER_NAME" ] || die "用户名不能为空。"
 
 REPO="${GH_REPO:-}"
 if [ -z "$REPO" ]; then
-  printf '仓库名 [second-mind]: '
-  read -r INPUT
-  REPO="${INPUT:-second-mind}"
+  if [ -t 0 ]; then
+    printf '仓库名 [second-mind]: '
+    read -r INPUT
+    REPO="${INPUT:-second-mind}"
+  else
+    # 非交互（脚本调用、CI）时用默认名，不要卡在等待输入上
+    REPO="second-mind"
+  fi
 fi
 
 REMOTE="https://github.com/$USER_NAME/$REPO.git"
