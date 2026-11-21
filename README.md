@@ -166,6 +166,8 @@ Web 端绑不了硬件。所谓 15 天免登录，本质是一枚 15 天有效�
 
 见 [CONTRIBUTING.md](CONTRIBUTING.md)。安全相关问题请按 [SECURITY.md](SECURITY.md) 私下报告。
 
+第一次把仓库发到 GitHub？照 [docs/PUBLISH-TO-GITHUB.md](docs/PUBLISH-TO-GITHUB.md) 走一遍，或用 `bash scripts/publish.sh`。
+
 设计过程与决策记录在 [docs/DESIGN.md](docs/DESIGN.md)，架构说明在 [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)。
 
 ## License
