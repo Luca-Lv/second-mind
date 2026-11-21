@@ -1,0 +1,70 @@
+name: Deploy demo
+
+# 把仓库构建成纯静态站点发布到 GitHub Pages，供任何人点开试用。
+#
+# 关键约束：Pages 只能托管静态文件，没有后端。因此这里显式清空云模式所需的
+# 环境变量，让构建落到 src/cloud.ts 的「本地模式」——数据存访客自己的
+# localStorage，不发短信、不产生任何服务器成本。
+# 想发布带手机号登录的版本，需要另找有后端的托管（见 README）。
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同时只跑一个发布，避免两次构建互相覆盖
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      # 类型检查不通过就不要发布，避免把坏版本推上线
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build static demo (local mode)
+        run: npm run build:web
+        env:
+          VITE_CLOUD_ENDPOINT: ''
+          VITE_CLOUD_KEY: ''
+
+      # enablement: true 会在仓库尚未开启 Pages 时自动开启（源设为 GitHub Actions），
+      # 省掉手动去 Settings → Pages 点一次
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

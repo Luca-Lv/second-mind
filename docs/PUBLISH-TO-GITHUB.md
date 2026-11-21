@@ -184,9 +184,11 @@ bash scripts/publish.sh              # 真正执行：检查 → 设 remote → 
 2. **确认许可证被识别**：仓库首页右侧应显示 `View license`（本项目是自定义的 source-available 许可，GitHub 不会给标准名称，显示 `Unknown license` 也正常）。没有的话检查 `LICENSE` 是否在根目录。
 3. **确认 Issues 开启**：Settings → General → Features → Issues 勾上。`.github/ISSUE_TEMPLATE/` 里的表单会自动生效。
 4. **看 CI 有没有跑**：点 **Actions** 标签页。第一次可能需要点 "I understand my workflows, go ahead and enable them"。绿灯说明 typecheck、测试、构建都过。
-5. **（可选）上线一个能点的版本**：
-   - 最省事：Settings → **Pages** → Source 选 `GitHub Actions`，按提示加一个静态部署工作流；或把 `npm run build` 产出的 `dist/` 传到 Vercel / Netlify。
-   - 注意：Pages 上只能是**本地模式**（纯静态，没有后端）。手机号登录与跨设备同步需要你自己的云环境与 `VITE_CLOUD_*` 变量。
+5. **上线一个能点的版本**（本仓库已自带工作流，不用自己写）：
+   - 仓库里已有 `.github/workflows/pages.yml`，push 到 `main` 就会自动构建并发布演示站。
+   - 首次若没自动开启：Settings → **Pages** → Source 选 **GitHub Actions**，再点 Actions → Deploy demo → Run workflow。
+   - 地址是 `https://<你的账号>.github.io/second-mind/`。工作流里显式清空了 `VITE_CLOUD_*`，所以线上**一定是本地模式**：数据存访客自己的浏览器，不发短信、不花钱。
+   - 想要带手机号登录与跨设备同步的版本，Pages 做不到（没有后端）。需要部署到 Vercel / 自建服务器，并在**构建环境**注入 `VITE_CLOUD_ENDPOINT` 与 `VITE_CLOUD_KEY`。
 
 ---
 

@@ -9,6 +9,8 @@
 
 **源码可见（source-available），不是开源许可。** 可以克隆、构建、自建部署——包括部署成公开可访问的站点；不可改编、不可再分发源码、不可商用。详见 [LICENSE](LICENSE) 与 [docs/LICENSING.md](docs/LICENSING.md)。
 
+**在线试用：<https://luca-lv.github.io/second-mind/>** —— 点开即用，无需注册。这是 GitHub Pages 上的静态演示，数据只存在**你自己浏览器**里（localStorage），换设备或清缓存即丢失，也不会向任何服务器发送内容。要手机号登录与跨设备同步，得自建带后端的版本，见 [接入你自己的后端](#接入你自己的后端)。
+
 身份词是第一级神经元，技能、步骤、进度、待办是它伸出的突触。平时你只看见第一级；只有当指针**靠近**某个小点，那一簇才亮起名字。
 
 这是「身份」优先的笔记工具：不是先写笔记再打标签，而是先把「我有哪些身份、各自长到哪一步」摆成一张网。
@@ -104,9 +106,9 @@ npm run build      # 产物在 dist/，base 已设为 './'，放在子路径也�
 
 把 `dist/` 丢给 GitHub Pages、Vercel、Netlify 或任意静态服务器即可。没有客户端路由，不需要 rewrite 规则。
 
-云模式记得在**构建环境**里设置 `VITE_CLOUD_ENDPOINT` 与 `VITE_CLOUD_KEY`（这两个值在构建时被内联，运行时不读环境变量）；漏设会打出一个本地模式产物。
+**GitHub Pages 已配好**：`.github/workflows/pages.yml` 在每次 push 到 `main` 时构建并发布演示站，并显式清空云模式变量，所以线上一定是本地模式。首次发布若没自动生效，去 **Settings → Pages** 把 Source 设为 **GitHub Actions**。地址形如 `https://<用户名>.github.io/second-mind/`。
 
-## 数据结构
+云模式记得在**构建环境**里设置 `VITE_CLOUD_ENDPOINT` 与 `VITE_CLOUD_KEY`（这两个值在构建时被内联，运行时不读环境变量）；漏设会打出一个本地模式产物。## 数据结构
 
 四张表，全部按 `owner_id` 行级隔离。
 

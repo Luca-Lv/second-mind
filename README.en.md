@@ -4,9 +4,11 @@
 
 [![License: Source-Available](https://img.shields.io/badge/license-source--available-orange.svg)](LICENSE)
 [![No Derivatives](https://img.shields.io/badge/derivatives-not%20permitted-c03636.svg)](LICENSE)
+[![React 19](https://img.shields.io/badge/react-19-0b7285.svg)](https://react.dev)
 
 **Source-available, not open source.** You may clone, build and self-host it — including as a publicly accessible site — for non-commercial personal use. You may not modify it, redistribute the code, or use it commercially. See [LICENSE](LICENSE) and [docs/LICENSING.md](docs/LICENSING.md).
-[![React 19](https://img.shields.io/badge/react-19-0b7285.svg)](https://react.dev)
+
+**Try it live: <https://luca-lv.github.io/second-mind/>** — no sign-up needed. It is a static GitHub Pages demo, so everything you type stays in **your own browser** (localStorage): switching devices or clearing site data loses it, and nothing is sent to any server. Phone login and cross-device sync require self-hosting with a backend.
 
 Identity keywords are first-class neurons; skills, steps, progress and todos are their synapses. Most of the time you only see the first level — a branch reveals itself only when your pointer **comes near** it.
 
