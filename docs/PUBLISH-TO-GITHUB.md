@@ -8,16 +8,16 @@
 
 我先检查过这台机器，情况如下：
 
-| 项 | 状态 |
-|---|---|
-| git | 已安装，2.54.0（Apple Git-157） |
-| 本地仓库 | 已初始化，分支 `main`，1 次提交 `afce5e3` |
-| 工作区 | 干净，没有未提交的改动 |
-| 远端 remote | **没有**，这是唯一缺的一环 |
-| GitHub CLI (`gh`) | 未安装（不影响，本教程不用它） |
-| SSH 密钥 | 没有（用 HTTPS + 令牌更省事，见下） |
-| 提交身份 | `Lv Ke <2501005857@qq.com>` |
-| 网络 | github.com 的 HTTPS 与 SSH 22 / 443 都通 |
+| 项                 | 状态                                   |
+| ----------------- | ------------------------------------ |
+| git               | 已安装，2.54.0（Apple Git-157）            |
+| 本地仓库              | 已初始化，分支 `main`，1 次提交 `afce5e3`       |
+| 工作区               | 干净，没有未提交的改动                          |
+| 远端 remote         | **没有**，这是唯一缺的一环                      |
+| GitHub CLI (`gh`) | 未安装（不影响，本教程不用它）                      |
+| SSH 密钥            | 没有（用 HTTPS + 令牌更省事，见下）               |
+| 提交身份              | `Lv Ke <2501005857@qq.com>`          |
+| 网络                | github.com 的 HTTPS 与 SSH 22 / 443 都通 |
 
 也就是说：**你只差「建一个空仓库 + 配一次认证 + 推一次」**。
 
@@ -34,7 +34,6 @@
    - ☐ Add a README file
    - ☐ Add .gitignore
    - ☐ Choose a license
-
    > 为什么：勾了就会在远端产生一个提交，你推上去时会因为"历史不一致"被拒绝。本项目这些文件都已经在本地仓库里了。
 4. 点 **Create repository**。
 5. 创建成功后会出现一个 "Quick setup" 页面，**不要照着它点**，直接回来做第 2 步。
@@ -47,7 +46,7 @@
 
 ```bash
 cd /Users/lvke/WorkBuddy/2026-11-21-15-14-51
-git remote add origin https://github.com/<你的账号>/second-mind.git
+git remote add origin https://github.com/Luca-Lv/second-mind.git
 ```
 
 验证：
@@ -71,11 +70,15 @@ git remote -v
 3. 填写：
    - **Note**：`second-mind 推送`
    - **Expiration**：`90 days`（到期再生成一个就行）
-   - **Select scopes**：只勾 **`repo`**（整块勾上，包含下面所有子项）
+   - **Select scopes**：勾 **`repo`**（整块勾上，包含下面所有子项）**和 `workflow`**
 4. 拉到最下面点 **Generate token**
 5. 页面上会出现一串 `ghp_xxxxxxxx...`，**只显示这一次**，现在复制下来存好（关掉页面就再也看不到）。
 
-> 更细粒度的做法：用 **Fine-grained tokens**，Repository access 选 `Only select repositories` → `second-mind`，Permissions → **Contents: Read and write**（Metadata 会自动带上）。安全性更好，但步骤多，第一次建议先用上面的 classic 令牌把流程跑通。
+> **`workflow` 这个勾不能省。** 本仓库含 `.github/workflows/ci.yml`，而 GitHub 规定：用没有 `workflow` 权限的令牌推送或修改 workflow 文件，会在对象全部上传完成之后被拒，报
+> `refusing to allow a Personal Access Token to create or update workflow ... without 'workflow' scope`。
+> 这个报错的迷惑之处在于前面所有步骤都显示成功（`Writing objects: 100%`、`Resolving deltas: 100%`），只在最后更新分支指针时失败。漏勾了只能重新生成令牌，权限不能事后追加。
+
+> 更细粒度的做法：用 **Fine-grained tokens**，Repository access 选 `Only select repositories` → `second-mind`，Permissions → **Contents: Read and write** + **Workflows: Read and write**（Metadata 会自动带上）。安全性更好，但步骤多，第一次建议先用上面的 classic 令牌把流程跑通。
 
 ### 3.2 让 macOS 记住它（强烈建议）
 
@@ -84,6 +87,21 @@ git config --global credential.helper osxkeychain
 ```
 
 这样你只需要输入一次令牌，之后会存进「钥匙串」，以后 `git push` 不再问。
+
+**换了新令牌、但 git 还在用旧的怎么办？** 钥匙串会一直把旧令牌递上去，此时现象是「我明明重新生成了令牌，报错却一模一样」。先删掉旧记录，下一次 push 才会重新问你要令牌：
+
+```bash
+printf "protocol=https\nhost=github.com\n\n" | git credential-osxkeychain erase
+git push -u origin main
+```
+
+删完可以用下面这条确认已经清掉（没有输出就是清掉了）：
+
+```bash
+printf "protocol=https\nhost=github.com\n\n" | git credential-osxkeychain get
+```
+
+更省事的替代：直接在「钥匙串访问」App 里搜索 `github.com`，把那条 `Internet password` 删掉。
 
 ### 3.3 如果你更想用 SSH（一次配置，永久免密）
 
@@ -160,8 +178,8 @@ bash scripts/publish.sh              # 真正执行：检查 → 设 remote → 
 
 ## 第 5 步：推送之后建议做的 5 件事
 
-1. **填 About**：仓库首页右上角齿轮 → Description 填一句话，Topics 加上
-   `second-brain` `knowledge-graph` `react` `canvas` `pkm` `identity`
+1. **填 About**：仓库首页右上角齿轮 → Description 填一句话，Topics 加上  
+   `second-brain` `knowledge-graph` `react` `canvas` `pkm` `identity`  
    （Topics 影响别人能不能搜到你）
 2. **确认许可证被识别**：仓库首页右侧应显示 `View license`（本项目是自定义的 source-available 许可，GitHub 不会给标准名称，显示 `Unknown license` 也正常）。没有的话检查 `LICENSE` 是否在根目录。
 3. **确认 Issues 开启**：Settings → General → Features → Issues 勾上。`.github/ISSUE_TEMPLATE/` 里的表单会自动生效。
@@ -209,31 +227,33 @@ npm run typecheck && npm test && npm run build
 
 ## 常见报错对照表
 
-| 报错信息 | 原因 | 怎么办 |
-|---|---|---|
-| `remote origin already exists` | 已经加过 remote | `git remote set-url origin <新地址>` |
-| `Authentication failed` / `Support for password authentication was removed` | 输的是账号密码，不是令牌 | 重新 push，密码处粘贴 `ghp_...` 令牌 |
-| 一直提示认证失败，但令牌是新的 | 钥匙串里存了旧密码 | 打开「钥匙串访问」搜 `github.com` 删除对应条目，再 push |
-| `Permission denied (publickey)` | SSH 公钥没加到 GitHub，或没加载 | `ssh -T git@github.com` 先验证；再 `ssh-add --apple-use-keychain ~/.ssh/id_ed25519` |
-| `! [rejected] main -> main (fetch first)` | 远端已有提交（建仓库时勾了 README） | `git pull --rebase origin main` 然后 `git push` |
-| `src refspec main does not match any` | 本地没有 `main` 分支或没有提交 | `git branch -M main`，确认 `git log` 有提交 |
-| `fatal: not a git repository` | 不在项目目录 | `cd /Users/lvke/WorkBuddy/2026-11-21-15-14-51` |
-| `RPC failed; HTTP 413` / `the remote end hung up unexpectedly` | 单次推送体积过大 | `git config http.postBuffer 524288000`；确认没把 `node_modules/` 提交进去 |
-| `Connection timed out` | 网络到 GitHub 不通 | SSH 改走 443（见 3.3）；或设代理 `git config --global http.proxy http://127.0.0.1:7890` |
-| `warning: LF will be replaced by CRLF` | 换行符提示 | 只是警告，macOS 上忽略即可 |
-| `Updates were rejected because the remote contains work...` | 同 `rejected (fetch first)` | 同上，先 `git pull --rebase` |
+| 报错信息                                                                        | 原因                         | 怎么办                                                                            |
+| --------------------------------------------------------------------------- | -------------------------- | ------------------------------------------------------------------------------ |
+| `remote origin already exists`                                              | 已经加过 remote                | `git remote set-url origin <新地址>`                                              |
+| `Authentication failed` / `Support for password authentication was removed` | 输的是账号密码，不是令牌               | 重新 push，密码处粘贴 `ghp_...` 令牌                                                     |
+| 一直提示认证失败，但令牌是新的                                                             | 钥匙串里存了旧密码                  | 打开「钥匙串访问」搜 `github.com` 删除对应条目，再 push                                          |
+| `Permission denied (publickey)`                                             | SSH 公钥没加到 GitHub，或没加载      | `ssh -T git@github.com` 先验证；再 `ssh-add --apple-use-keychain ~/.ssh/id_ed25519` |
+| `! [rejected] main -> main (fetch first)`                                   | 远端已有提交（建仓库时勾了 README）      | `git pull --rebase origin main` 然后 `git push`                                  |
+| `refusing to allow a Personal Access Token to create or update workflow ... without 'workflow' scope` | 令牌没勾 `workflow`，推不了 `.github/workflows/` | 重新生成令牌勾上 `workflow`，清掉钥匙串旧凭据（见 3.2），再 push |
+| `src refspec main does not match any`                                       | 本地没有 `main` 分支或没有提交        | `git branch -M main`，确认 `git log` 有提交                                          |
+| `fatal: not a git repository`                                               | 不在项目目录                     | `cd /Users/lvke/WorkBuddy/2026-11-21-15-14-51`                                 |
+| `RPC failed; HTTP 413` / `the remote end hung up unexpectedly`              | 单次推送体积过大                   | `git config http.postBuffer 524288000`；确认没把 `node_modules/` 提交进去               |
+| `Connection timed out`                                                      | 网络到 GitHub 不通              | SSH 改走 443（见 3.3）；或设代理 `git config --global http.proxy http://127.0.0.1:7890`  |
+| `LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443`   | 连接被中途掐断，多为网络抖动或代理不稳 | 直接重试；反复出现就换 SSH；也可试 `git config --global http.version HTTP/1.1` |
+| `warning: LF will be replaced by CRLF`                                      | 换行符提示                      | 只是警告，macOS 上忽略即可                                                               |
+| `Updates were rejected because the remote contains work...`                 | 同 `rejected (fetch first)` | 同上，先 `git pull --rebase`                                                       |
 
 ---
 
 ## 如果推错了
 
-| 想做的事 | 命令 |
-|---|---|
-| 改远端地址（账号写错、仓库改名） | `git remote set-url origin <新地址>` |
-| 撤销最后一次提交，但保留改动 | `git reset --soft HEAD~1` |
-| 取消暂存某个文件 | `git restore --staged <文件>` |
-| 改最后一次提交的说明 | `git commit --amend -m "新说明"`（已推送则需 `git push --force-with-lease`） |
-| 删除 GitHub 上的仓库 | 仓库 Settings → 最下方 Danger Zone → Delete this repository |
+| 想做的事             | 命令                                                                 |
+| ---------------- | ------------------------------------------------------------------ |
+| 改远端地址（账号写错、仓库改名） | `git remote set-url origin <新地址>`                                  |
+| 撤销最后一次提交，但保留改动   | `git reset --soft HEAD~1`                                          |
+| 取消暂存某个文件         | `git restore --staged <文件>`                                        |
+| 改最后一次提交的说明       | `git commit --amend -m "新说明"`（已推送则需 `git push --force-with-lease`） |
+| 删除 GitHub 上的仓库   | 仓库 Settings → 最下方 Danger Zone → Delete this repository             |
 
 > **不要**对 `main` 随意 `git push --force`。别人 clone 过的历史会错位。已经推上去的错误，最稳的做法是再提交一次修正。
 
