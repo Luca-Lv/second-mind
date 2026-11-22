@@ -1,6 +1,8 @@
 # second mind
 
 > A neuronal map of who you are.
+> > Make sense of your own identity labels across platforms and roles.
+> > Every entry automatically connects to related ones, gradually growing into a knowledge graph of who you are.
 
 [![License: Source-Available](https://img.shields.io/badge/license-source--available-orange.svg)](LICENSE)
 [![No Derivatives](https://img.shields.io/badge/derivatives-not%20permitted-c03636.svg)](LICENSE)
