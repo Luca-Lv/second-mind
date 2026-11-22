@@ -2,6 +2,13 @@
 
 > 用一张神经元网络，梳理「我是谁」。
 
+## 为什么做这个
+
+在这个多支点生活带来稳定性的时代，每个人都在不同平台，不同场景中有自己不同的身份：GitHub 上是开发者，小红书上表现一种生活方式，微信里是朋友眼中的某个人。这些身份
+是割裂的，我们自己都未必说得清"我到底是个什么样的人"。
+
+Second Mind 不帮你分类，它帮你看见关联，帮你梳理自己，当你的第二大脑。当你把散落的标签连成一张网，会发现它们其实是同一种倾向在不同场合的投影。
+
 [![License: Source-Available](https://img.shields.io/badge/license-source--available-orange.svg)](LICENSE)
 [![No Derivatives](https://img.shields.io/badge/derivatives-not%20permitted-c03636.svg)](LICENSE)
 [![React 19](https://img.shields.io/badge/react-19-0b7285.svg)](https://react.dev)
